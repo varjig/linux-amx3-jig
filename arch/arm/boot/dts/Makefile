@@ -486,7 +486,8 @@ dtb-$(CONFIG_SOC_AM43XX) += \
 	am437x-gp-evm.dtb \
 	am437x-gp-evm-hdmi.dtb \
 	var-som-am43.dtb \
-	var-som-am43-eth1.dtb
+	var-som-am43-nowifi.dtb \
+	var-som-am43-nowifi-nonand.dtb \
 dtb-$(CONFIG_SOC_OMAP5) += \
 	omap5-cm-t54.dtb \
 	omap5-igep0050.dtb \

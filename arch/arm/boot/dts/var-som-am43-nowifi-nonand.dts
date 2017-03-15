@@ -1,0 +1,78 @@
+/*
+ * Copyright (C) 2014 Variscite LTD - http://www.variscite.com/
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ */
+
+/* VAR-SOM-AM43 */
+
+#include "var-som-am43.dtsi"
+
+&am43xx_pinmux {
+	pinctrl-0 = <&clkout2_pin &ddr3_vtt_toggle_default &debugss_pins &gpio_pins &wifi_gpio_pins &nand_gpio_pins>;
+
+	wifi_gpio_pins: pinmux_wlan_pins_default {
+		pinctrl-single,pins = <
+
+			0x40 (PIN_INPUT | MUX_MODE7) /* gpmc_a0.gpio1[16] */
+			0x44 (PIN_INPUT | MUX_MODE7) /* gpmc_a1.gpio1[17] */
+			0x48 (PIN_INPUT | MUX_MODE7) /* gpmc_a2.gpio1[18] */
+			0x4c (PIN_INPUT | MUX_MODE7) /* gpmc_a3.gpio1[19] */
+			0x50 (PIN_INPUT | MUX_MODE7) /* gpmc_a4.gpio1[20] */
+			0x54 (PIN_INPUT | MUX_MODE7) /* gpmc_a5.gpio1[21] */
+			0x58 (PIN_INPUT | MUX_MODE7) /* gpmc_a6.gpio1[22] */
+			0x5c (PIN_INPUT | MUX_MODE7) /* gpmc_a7.gpio1[23] */
+			0x60 (PIN_INPUT | MUX_MODE7) /* gpmc_a8.gpio1[24] */
+			0x64 (PIN_INPUT | MUX_MODE7) /* gpmc_a9.gpio1[25] */
+			0x68 (PIN_INPUT | MUX_MODE7) /* gpmc_a10.gpio1[26] */
+			0x6c (PIN_INPUT | MUX_MODE7) /* gpmc_a11.gpio1[27] */
+			0x78 (PIN_INPUT | MUX_MODE7) /* gpmc_be1n.gpio1[28] */
+			0x88 (PIN_INPUT | MUX_MODE7) /* gpmc_csn3.gpio2[0] */
+			0x8c (PIN_INPUT | MUX_MODE7) /* gpmc_clk.gpio2[1] */
+		>;
+	};
+
+	nand_gpio_pins: unused_nand {
+		pinctrl-single,pins = <
+			0x00 (PIN_INPUT | MUX_MODE7) /* gpmc_ad0.gpio1[0] */
+			0x04 (PIN_INPUT | MUX_MODE7) /* gpmc_ad1.gpio1[1] */
+			0x08 (PIN_INPUT | MUX_MODE7) /* gpmc_ad2.gpio1[2] */
+			0x0c (PIN_INPUT | MUX_MODE7) /* gpmc_ad3.gpio1[3] */
+			0x10 (PIN_INPUT | MUX_MODE7) /* gpmc_ad4.gpio1[4] */
+			0x14 (PIN_INPUT | MUX_MODE7) /* gpmc_ad5.gpio1[5] */
+			0x18 (PIN_INPUT | MUX_MODE7) /* gpmc_ad6.gpio1[6] */
+			0x1c (PIN_INPUT | MUX_MODE7) /* gpmc_ad7.gpio1[7] */
+			0x70 (PIN_INPUT | MUX_MODE7) /* gpmc_wait0.gpio0[30] */
+			0x74 (PIN_INPUT | MUX_MODE7) /* gpmc_wpn.gpio0[31] */
+			0x90 (PIN_INPUT | MUX_MODE7) /* gpmc_advn_ale.gpio2[2] */
+			0x94 (PIN_INPUT | MUX_MODE7) /* gpmc_oen_ren.gpio2[3] */
+			0x98 (PIN_INPUT | MUX_MODE7) /* gpmc_wen.gpio2[4] */
+			0x9c (PIN_INPUT | MUX_MODE7) /* gpmc_be0n_cle.gpio2[5] */
+		>;
+	};
+
+	nand_flash_x8_default: nand_flash_x8_default {
+		pinctrl-single,pins = <>;
+	};
+
+	nand_flash_x8_sleep: nand_flash_x8_sleep {
+		pinctrl-single,pins = <>;
+	};
+
+
+};
+
+&mac {
+	pinctrl-names = "default";
+	pinctrl-0 = <&cpsw_default>;
+	dual_emac = <1>;
+	status = "okay";
+};
+
+&gpmc {
+	status = "disabled";
+};
+
+
