@@ -332,7 +332,6 @@
 			0x0BC  (PIN_INPUT  | MUX_MODE7) /* gpio2[13] */
 			0x0AC  (PIN_INPUT  | MUX_MODE7) /* gpio2[9] */
 			0x0D0  (PIN_INPUT  | MUX_MODE7) /* gpio0[8] */
-			0x0D0  (PIN_INPUT  | MUX_MODE7) /* gpio0[8] */
 			0x0D8  (PIN_INPUT  | MUX_MODE7) /* gpio0[10] */
 			0x264  (PIN_INPUT  | MUX_MODE7) /* gpio3[22] */
 			0x1A8  (PIN_INPUT  | MUX_MODE7) /* gpio3[20] */
