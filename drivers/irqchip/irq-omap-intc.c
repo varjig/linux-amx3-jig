@@ -353,7 +353,9 @@ omap_intc_handle_irq(struct pt_regs *regs)
 	 * run into hitting the spurious IRQ condition below.
 	 */
 	if (unlikely((irqnr & SPURIOUSIRQ_MASK) == SPURIOUSIRQ_MASK)) {
+#if 0
 		pr_err_once("%s: spurious irq!\n", __func__);
+#endif
 		irq_err_count++;
 		omap_ack_irq(NULL);
 		return;
