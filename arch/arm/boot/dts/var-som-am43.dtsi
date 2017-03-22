@@ -178,6 +178,8 @@
 			0x138 (PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxd0.rgmii1_rxd2 */
 			0x13c (PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxd1.rgmii1_rxd1 */
 			0x140 (PIN_INPUT_PULLDOWN | MUX_MODE2)	/* mii1_rxd0.rgmii1_rxd0 */
+
+			0x038 (PIN_OUTPUT_PULLUP  | MUX_MODE7)  /* gpio1[14] PHY Reset*/
 		>;
 	};
 
@@ -196,6 +198,8 @@
 			0x138 (PIN_INPUT | PULL_DISABLE | MUX_MODE7)
 			0x13c (PIN_INPUT | PULL_DISABLE | MUX_MODE7)
 			0x140 (PIN_INPUT | PULL_DISABLE | MUX_MODE7)
+
+			0x038 (PIN_INPUT_PULLDOWN | MUX_MODE7) /* gpio1[14] PHY Reset*/
 		>;
 	};
 
@@ -311,7 +315,6 @@
 	gpio_pins: gpio_pins {
 		pinctrl-single,pins = <
 			0x030  (PIN_INPUT  | MUX_MODE7) /* gpio1[12] */
-			0x038  (PIN_INPUT  | MUX_MODE7) /* gpio1[14] */
 			0x2C0  (PIN_INPUT  | MUX_MODE7) /* gpio0[18] */
 			0x0E4  (PIN_INPUT  | MUX_MODE7) /* gpio2[23] */
 			0x0A0  (PIN_INPUT  | MUX_MODE7) /* gpio2[6] */
