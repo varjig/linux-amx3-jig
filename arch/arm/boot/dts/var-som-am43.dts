@@ -60,6 +60,12 @@
 	};
 };
 
+&vmmcwl_fixed{
+	gpio = <&gpio1 20 GPIO_ACTIVE_HIGH>;
+	startup-delay-us = <70000>;
+	enable-active-high;
+};
+
 &mmc3 { /* WL8 */
 	status = "okay";
 	/* these are on the crossbar and are outlined in the
