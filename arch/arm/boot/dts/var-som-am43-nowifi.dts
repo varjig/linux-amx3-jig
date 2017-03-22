@@ -34,11 +34,3 @@
 	};
 };
 
-&mac {
-	pinctrl-names = "default";
-	pinctrl-0 = <&cpsw_default>;
-	dual_emac = <1>;
-	status = "okay";
-};
-
-
