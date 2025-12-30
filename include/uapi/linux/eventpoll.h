@@ -26,6 +26,11 @@
 #define EPOLL_CTL_DEL 2
 #define EPOLL_CTL_MOD 3
 
+#define EPOLLIN         (__force __poll_t)0x00000001
+#define EPOLLOUT        (__force __poll_t)0x00000004
+#define EPOLLRDNORM     (__force __poll_t)0x00000040
+#define EPOLLWRNORM     (__force __poll_t)0x00000100
+
 /*
  * Request the handling of system wakeup events so as to prevent system suspends
  * from happening while those events are being processed.

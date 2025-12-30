@@ -55,6 +55,7 @@ extern struct resource *platform_get_resource_byname(struct platform_device *,
 						     unsigned int,
 						     const char *);
 extern int platform_get_irq_byname(struct platform_device *, const char *);
+extern int platform_get_irq_optional(struct platform_device *, unsigned int);
 extern int platform_add_devices(struct platform_device **, int);
 
 struct platform_device_info {

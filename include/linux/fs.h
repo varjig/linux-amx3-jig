@@ -630,6 +630,7 @@ struct inode {
 
 	/* Misc */
 	unsigned long		i_state;
+	struct rw_semaphore     i_rwsem;
 	struct mutex		i_mutex;
 
 	unsigned long		dirtied_when;	/* jiffies of first dirtying */
@@ -712,6 +713,16 @@ enum inode_i_mutex_lock_class
 
 void lock_two_nondirectories(struct inode *, struct inode*);
 void unlock_two_nondirectories(struct inode *, struct inode*);
+
+static inline void inode_lock(struct inode *inode)
+{
+        down_write(&inode->i_rwsem);
+}
+
+static inline void inode_unlock(struct inode *inode)
+{
+        up_write(&inode->i_rwsem);
+}
 
 /*
  * NOTE: in a 32bit arch with a preemptable kernel and

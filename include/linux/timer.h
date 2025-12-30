@@ -150,6 +150,9 @@ static inline void init_timer_on_stack_key(struct timer_list *timer,
 #define setup_deferrable_timer_on_stack(timer, fn, data)		\
 	__setup_timer_on_stack((timer), (fn), (data), TIMER_DEFERRABLE)
 
+#define from_timer(var, callback_timer, timer_fieldname) \
+        container_of(callback_timer, typeof(*var), timer_fieldname)
+
 /**
  * timer_pending - is a timer pending?
  * @timer: the timer in question
