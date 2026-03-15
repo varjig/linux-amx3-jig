@@ -11,7 +11,7 @@
 #include <dt-bindings/interrupt-controller/irq.h>
 
 / {
-	model = "Variscite AM335x SOM";
+	model = "Variscite AM335x SOM with TPM";
 	compatible = "ti,var-som-am33", "ti,am33xx";
 
 	cpus {
